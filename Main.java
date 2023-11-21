@@ -59,7 +59,29 @@ public class Main{
       scan = new Scanner(url.openStream());
       rawData = scan.nextLine();
       Region test = gson.fromJson(rawData,Region.class);
+      System.out.println("Building Regional Dex");
       RegionalDex kanto = new RegionalDex(test);
-      kanto.testPrintMonName(32);
+      System.out.println(kanto.getName());
+      for(String s:kanto.getPokeList()){
+         System.out.println(s);
+      }
+      System.out.println("There are "+kanto.getPokeList().length+" Pokemon in this dex.");
+      kanto.testPrintMonName(0);
+      //Takes about 45.5 seconds from start run to here
+      //Generation 2
+      url = new URL("https://pokeapi.co/api/v2/generation/2");
+      scan = new Scanner(url.openStream());
+      rawData = scan.nextLine();
+      Generation testGen = gson.fromJson(rawData,Generation.class);
+      System.out.println("Building Generational Dex");
+      GenerationalDex two = new GenerationalDex(testGen);
+      System.out.println(two.getName());
+      for(String s:two.getPokeList()){
+         System.out.println(s);
+      }
+      System.out.println("There are "+two.getPokeList().length+" Pokemon in this dex.");
+      System.out.println(two.getPokemon(0).getDisplayName());
+      //Takes about 69 seconds from start run to operation complete, 
+      //about 23.5 seconds from "Building Generational Dex" to operation complete
    }
 }

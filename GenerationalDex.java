@@ -38,8 +38,9 @@ public class GenerationalDex{
       Pokemon tempMon;
       Gson gson = new Gson();
       //Sorting the list of pokemon
-      String[] pokeListSorted = Arrays.sort(gen.getPokeList(), String.CASE_INSENSITIVE_ORDER); 
-      pokemon = new Pokemon[pokeList.size()];
+      String[] pokeListSorted = gen.getPokeList();
+      Arrays.sort(pokeListSorted, String.CASE_INSENSITIVE_ORDER); 
+      pokemon = new Pokemon[pokeListSorted.length];
       //Building the dex using for loops and API calls
       for(String poke:pokeListSorted){
          url = new URL("https://pokeapi.co/api/v2/pokemon-species/"+poke);
@@ -67,7 +68,7 @@ public class GenerationalDex{
    *
    *@return display name
    */
-   public getName(){
+   public String getName(){
       return name;
    }
    /**

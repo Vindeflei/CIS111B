@@ -82,7 +82,7 @@ public class RegionalDex{
    *
    *@return display name
    */
-   public getName(){
+   public String getName(){
       return name;
    }
    /**

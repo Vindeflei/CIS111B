@@ -42,8 +42,8 @@ public class Generation{
    *
    *@return list of pokemon names
    */
-   public String[] getPokeList{
-      String[] temp;
+   public String[] getPokeList(){
+      String[] temp = new String[pokemon_species.length];
       int i = 0;
       for(NameValue n:pokemon_species){
          temp[i] = n.getName();

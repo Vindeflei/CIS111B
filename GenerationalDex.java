@@ -26,7 +26,7 @@ public class GenerationalDex{
    *@param gen the generation to build a dex for
    */
    public GenerationalDex(Generation gen)throws MalformedURLException, IOException{
-      name = gen.getDisplayName();
+      this.name = gen.getDisplayName();
       //Setting up temp variables for API calls
       URL url;
       Scanner scan;

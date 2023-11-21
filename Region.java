@@ -9,17 +9,32 @@ public class Region{
    */
    private String name;
    /**
+   *An array of the names for this generation
+   *in various languages
+   */
+   private NameValue[] names;
+   /**
    *The list of pokedexes used by this region in all of the games 
    *it appears in
    */
+   
    private NameValue[] pokedexes;
    /**
    *Returns the ID name of the region
    *
    *@return ID name
    */
-   public String getName(){
+   public String getIDName(){
       return name;
+   }
+   /**
+   *Returns the display name of the region,
+   *in English
+   *
+   *@return display name
+   */
+   public String getDisplayName(){
+      return names[6].getName(); 
    }
    /**
    *Returns a list of the ID names of the pokedexes used by this region

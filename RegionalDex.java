@@ -14,7 +14,7 @@ import java.util.Collections;
 */
 public class RegionalDex{
    /**
-   *The ID name of the region
+   *The display name of the region
    */
    private String name;
    /**
@@ -28,8 +28,8 @@ public class RegionalDex{
    *@param r the region to build a dex for
    */
    public RegionalDex(Region r)throws MalformedURLException, IOException{
-      this.name = r.getName();
-      //Declare variables outside of loops
+      this.name = r.getDisplayName();
+      //Setting up temp variables for API calls
       URL url;
       Scanner scan;
       String rawData;
@@ -37,7 +37,7 @@ public class RegionalDex{
       HashSet<String> pokeList = new HashSet<String>();
       PokemonSpecies tempSpec;
       PokemonSprites[] tempPics;
-      int i;
+      int i = 0;
       int j;
       Pokemon tempMon;
       Gson gson = new Gson();
@@ -55,8 +55,7 @@ public class RegionalDex{
       ArrayList<String> pokeListSorted = new ArrayList<String>(pokeList);
       Collections.sort(pokeListSorted);
       pokemon = new Pokemon[pokeList.size()];
-      i=0;
-      //Fill pokemon array with Pokemon objects
+      //Building the dex using for loops and API calls
       for(String poke:pokeListSorted){
          url = new URL("https://pokeapi.co/api/v2/pokemon-species/"+poke);
          scan = new Scanner(url.openStream());
@@ -76,6 +75,39 @@ public class RegionalDex{
          pokemon[i]=tempMon;
          i++;
       }
+   }
+   /**
+   *Returns the display name, intended for use
+   *with app visuals
+   *
+   *@return display name
+   */
+   public getName(){
+      return name;
+   }
+   /**
+   *Returns a list of pokemon names in this region
+   *intended for use with app visuals
+   *
+   *@return list of pokemon names
+   */
+   public String[] getPokeList(){
+      String[] temp = new String[pokemon.length];
+      int i=0;
+      for(Pokemon poke:pokemon){
+         temp[i]=poke.getDisplayName();
+         i++;
+      }
+      return temp;
+   }
+   /**
+   *Returns the pokemon for the given index, intended
+   *for use on click, needs an index value
+   *
+   *@return pokemon at index
+   */
+   public Pokemon getPokemon(int index){
+      return pokemon[index];
    }
    /**
    *A test method for printing a given pokemon's display name

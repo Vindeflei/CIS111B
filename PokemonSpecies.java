@@ -26,6 +26,11 @@ public class PokemonSpecies{
    */
    private Variety[] varieties;
    /**
+   *True if a Pokemon has different sprites for males and
+   *females, false if males and females appear identical.
+   */
+   private boolean has_gender_differences;
+   /**
    *Returns the ID name used by the API
    *
    *@return ID name
@@ -71,5 +76,14 @@ public class PokemonSpecies{
          temp[i]=varieties[i].getName();
       }
       return temp;
+   }
+   /**
+   *Returns if the sprites are different based on
+   *gender, true or false.
+   *
+   *@return if different sprites for gender
+   */
+   public boolean getGenderDiff(){
+      return has_gender_differences;
    }
 }

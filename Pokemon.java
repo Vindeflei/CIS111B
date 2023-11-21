@@ -29,6 +29,11 @@ public class Pokemon {
    */
    private PokemonSprites[] sprites;
    /**
+   *True if a Pokemon has different sprites for males and
+   *females, false if males and females appear identical.
+   */
+   private boolean genderDiff;
+   /**
    *The constructor.
    *Takes information from the two separate endpoints
    *and combines them for easier use.
@@ -36,7 +41,7 @@ public class Pokemon {
    *@param species the information from the pokemon-species call
    *@param sprites the sprite information from the pokemon call, as an array to
    *include possible varieties
-   */
+   */   
    public Pokemon(PokemonSpecies species, PokemonSprites[] s){
       this.idName = species.getIDName();
       this.prevEvol = species.getPrevEvol();
@@ -44,6 +49,7 @@ public class Pokemon {
       this.displayName = species.getDisplayName();
       this.varieties = species.getVarieties();
       this.sprites = s;
+      this.genderDiff = species.getGenderDiff();
    }
    /**
    *Returns the API ID name
@@ -104,5 +110,14 @@ public class Pokemon {
          }
       }
       return temp;
+   }
+   /**
+   *Returns if the sprites are different based on
+   *gender, true or false.
+   *
+   *@return if different sprites for gender
+   */
+   public boolean getGenderDiff(){
+      return genderDiff;
    }
 }

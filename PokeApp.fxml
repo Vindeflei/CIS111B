@@ -34,17 +34,17 @@
                <children>
                   <ImageView fx:id="sprite" fitHeight="255.0" fitWidth="300.0" nodeOrientation="INHERIT" pickOnBounds="true">
                      <image>
-                        <Image url="@../../../../../../Stuff/Pictures/Loki.jpg" />
+                        <Image url="" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="spriteShiny" fitHeight="255.0" fitWidth="300.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../../../../../../Stuff/Pictures/LokiPouch16Feb23.jpg" />
+                        <Image url="" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <Label fx:id="pokeName" alignment="CENTER" prefHeight="25.0" prefWidth="600.0" text="Loki" textAlignment="CENTER" />
+            <Label fx:id="pokeName" alignment="CENTER" prefHeight="25.0" prefWidth="600.0" text="" textAlignment="CENTER" />
             <ChoiceBox fx:id="chosenPokeVar" prefHeight="25.0" prefWidth="675.0" />
          </children>
       </VBox>

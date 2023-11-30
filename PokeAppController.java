@@ -15,13 +15,13 @@ public class PokeAppController {
     private AnchorPane base;
 
     @FXML
-    private ChoiceBox<?> chosenGenOrReg;
+    private ChoiceBox<String> chosenGenOrReg;
 
     @FXML
-    private ChoiceBox<?> chosenPokeVar;
+    private ChoiceBox<String> chosenPokeVar;
 
     @FXML
-    private ChoiceBox<?> chosenPokemon;
+    private ChoiceBox<String> chosenPokemon;
 
     @FXML
     private ToggleButton generationToggle;
@@ -55,5 +55,21 @@ public class PokeAppController {
 
     @FXML
     private VBox vBox;
+    //In the same order as the API IDs
+    private String[] genList = new String[]{"1st Generation","2nd Generation",
+    "3rd Generation","4th Generation","5th Generation","6th Generation",
+    "7th Generation","8th Generation","9th Generation"};
+    //In the same order as the API IDs
+    private String[] regList = new String[]{"Kanto","Johto","Hoenn","Sinnoh",
+    "Unova","Kalos","Alola","Galar","Hisui","Paldea"};
+
+    private String[] pokemonList;
+
+    private String[] pokeVarieties;
+
+    private String spriteURL;
+
+    private String spriteShinyURL;
+
 
 }

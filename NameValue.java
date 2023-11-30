@@ -7,11 +7,13 @@
 */
 public class NameValue{
    /**
-   *
+   *The String needed, called name by the API
    */
    private String name;
    /**
+   *Returns the name field
    *
+   *@return the name value
    */
    public String getName(){
       return name;

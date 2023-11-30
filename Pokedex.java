@@ -9,10 +9,6 @@ public class Pokedex{
    */
    private String name;
    /**
-   *An array of names for the dex, in various languages.
-   */
-   private NameValue[] names;
-   /**
    *An array of pokedex entries.
    */
    private Entry[] pokemon_entries;
@@ -23,14 +19,6 @@ public class Pokedex{
    */
    public String getIDName(){
       return name;
-   }
-   /**
-   *Returns the display name of the pokedex, in English.
-   *
-   *@return the display name
-   */
-   public String getDisplayName(){
-      return names[names.length-1].getName();
    }
    /**
    *Returns an array of the ID names of the pokemon in the dex.

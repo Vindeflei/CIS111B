@@ -15,16 +15,25 @@ public class PokeAppController {
     private AnchorPane base;
 
     @FXML
+    private VBox vBox;
+
+    @FXML
+    private HBox selectGenOrReg;
+
+    @FXML
     private ChoiceBox<String> chosenGenOrReg;
 
     @FXML
-    private ChoiceBox<String> chosenPokeVar;
+    private ToggleButton generationToggle;
+
+    @FXML
+    private ToggleGroup select;
+
+    @FXML
+    private ToggleButton regionToggle;
 
     @FXML
     private ChoiceBox<String> chosenPokemon;
-
-    @FXML
-    private ToggleButton generationToggle;
 
     @FXML
     private ProgressBar loadingBar;
@@ -33,16 +42,7 @@ public class PokeAppController {
     private Label loadingText;
 
     @FXML
-    private Label pokeName;
-
-    @FXML
-    private ToggleButton regionToggle;
-
-    @FXML
-    private ToggleGroup select;
-
-    @FXML
-    private HBox selectGenOrReg;
+    private HBox spritesView;
 
     @FXML
     private ImageView sprite;
@@ -51,10 +51,11 @@ public class PokeAppController {
     private ImageView spriteShiny;
 
     @FXML
-    private HBox spritesView;
+    private Label pokeName;
 
     @FXML
-    private VBox vBox;
+    private ChoiceBox<String> chosenPokeVar;
+    
     //In the same order as the API IDs
     private String[] genList = new String[]{"1st Generation","2nd Generation",
     "3rd Generation","4th Generation","5th Generation","6th Generation",
@@ -71,5 +72,7 @@ public class PokeAppController {
 
     private String spriteShinyURL;
 
-
+   public void intialise(){
+   
+   } 
 }

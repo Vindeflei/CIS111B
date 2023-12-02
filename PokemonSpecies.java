@@ -22,6 +22,11 @@ public class PokemonSpecies{
    */
    private Variety[] varieties;
    /**
+   *True if a Pokemon has different sprites for males and
+   *females, false if males and females appear identical.
+   */
+   private boolean has_gender_differences;
+   /**
    *Returns the ID name used by the API
    *
    *@return ID name
@@ -35,7 +40,7 @@ public class PokemonSpecies{
    *@return genus
    */
    public String getGenus(){
-      String tempGen;
+      String tempGen="English not found";
       for(GenusValue gen:genera){
          if(gen.getLang().equals("en")){
             tempGen = gen.getName();
@@ -49,7 +54,7 @@ public class PokemonSpecies{
    *@return display name
    */
    public String getDisplayName(){
-      String tempName;
+      String tempName="English not found";
       for(NameLangValue n:names){
          if(n.getLang().equals("en")){
             tempName = n.getName();
@@ -69,5 +74,14 @@ public class PokemonSpecies{
          temp[i]=varieties[i].getName();
       }
       return temp;
+   }
+   /**
+   *Returns if the sprites are different based on
+   *gender, true or false.
+   *
+   *@return if different sprites for gender
+   */
+   public boolean getGenderDiff(){
+      return has_gender_differences;
    }
 }

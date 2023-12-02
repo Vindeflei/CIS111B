@@ -13,7 +13,7 @@ public class Generation{
    *An array of the names for this generation
    *in various languages
    */
-   private NameValue[] names;
+   private NameLangValue[] names;
    /**
    *An array of the names of the pokemon in
    *this generation
@@ -34,7 +34,13 @@ public class Generation{
    *@return display name
    */
    public String getDisplayName(){
-      return names[6].getName(); 
+      String tempName = "English not found";
+      for(NameLangValue n:names){
+         if(n.getLang().equals("en")){
+            tempName = n.getName();
+         }
+      }
+      return tempName;
    }
    /**
    *Returns a list of the names of the pokemon

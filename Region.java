@@ -33,7 +33,7 @@ public class Region{
    *@return display name
    */
    public String getDisplayName(){
-      String tempName;
+      String tempName = "English not found";
       for(NameLangValue n:names){
          if(n.getLang().equals("en")){
             tempName = n.getName();

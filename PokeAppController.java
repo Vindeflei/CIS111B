@@ -8,6 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import java.util.List;
+import java.util.Arrays;
 
 public class PokeAppController {
 
@@ -55,5 +57,49 @@ public class PokeAppController {
 
     @FXML
     private VBox vBox;
+   
+   
+   public List<String> regions = Arrays.asList("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar");
+   public List<String> generations = Arrays.asList("Generation I", "Generation II", "Generation III", "Generation IV", "Generation V", "Generation VI","Generation VII", "Generation VIII");
 
+   public void initialize()
+   {
+
+   //choice boxxes
+   chosenGenOrReg.setOnAction(event -> handleGenerationToggle());
+   
+   //buttons
+   generationToggle.setOnAction(event -> handleGenerationToggle());
+   regionToggle.setOnAction(event -> handleRegionToggle());
+   }
+   
+    private void handleGenerationToggle()
+    {
+      if (generationToggle.isSelected()) 
+      {
+
+          //chosenGenOrReg.getItems().addAll(generations);
+
+          // issue with the parmater type in the addAll java fx method so i leave it commentd out
+          // as to not break the build
+      }
+      else 
+      {
+
+      }
+    }
+    
+    private void handleRegionToggle()
+    {
+      if (regionToggle.isSelected())
+      {
+          //chosenGenOrReg.getItems().addAll(regions);
+      }
+      else
+      {
+         
+      }
+   } 
 }
+
+

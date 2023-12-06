@@ -8,8 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import java.util.List;
-import java.util.Arrays;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 public class PokeAppController {
 
@@ -59,8 +59,8 @@ public class PokeAppController {
     private VBox vBox;
    
    
-   public List<String> regions = Arrays.asList("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar");
-   public List<String> generations = Arrays.asList("Generation I", "Generation II", "Generation III", "Generation IV", "Generation V", "Generation VI","Generation VII", "Generation VIII");
+   public ObservableList<String> regions = FXCollections.observableArrayList("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar");
+   public ObservableList<String> generations = FXCollections.observableArrayList("Generation I", "Generation II", "Generation III", "Generation IV", "Generation V", "Generation VI","Generation VII", "Generation VIII");
 
    public void initialize()
    {
@@ -85,7 +85,7 @@ public class PokeAppController {
       }
       else 
       {
-
+          // chosenGenOrReg.getItems().setItems(null)
       }
     }
     
@@ -94,12 +94,15 @@ public class PokeAppController {
       if (regionToggle.isSelected())
       {
           //chosenGenOrReg.getItems().addAll(regions);
+
+          // or .setItems(regions)
       }
       else
       {
-         
+         // chosenGenOrReg.getItems().setItems(null)
       }
    } 
+
 }
 
 

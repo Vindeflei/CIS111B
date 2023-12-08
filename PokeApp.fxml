@@ -34,12 +34,12 @@
                <children>
                   <ImageView fx:id="sprite" fitHeight="255.0" fitWidth="300.0" nodeOrientation="INHERIT" pickOnBounds="true">
                      <image>
-                        <Image url="" />
+                        <Image url="testPic.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="spriteShiny" fitHeight="255.0" fitWidth="300.0" pickOnBounds="true">
                      <image>
-                        <Image url="" />
+                        <Image url="testPic.jpg" />
                      </image>
                   </ImageView>
                </children>

@@ -8,6 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
 
 public class PokeAppController {
 
@@ -70,9 +72,51 @@ public class PokeAppController {
 
     private String spriteURL;
 
-    private String spriteShinyURL;
+    private String spriteShinyURL;   
+  
+   public ObservableList<String> regions = FXCollections.observableArrayList("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar");
+   public ObservableList<String> generations = FXCollections.observableArrayList("Generation I", "Generation II", "Generation III", "Generation IV", "Generation V", "Generation VI","Generation VII", "Generation VIII");
 
-   public void intialise(){
+   public void initialize()
+   {
+
+   //choice boxxes
+   chosenGenOrReg.setOnAction(event -> handleGenerationToggle());
    
+   //buttons
+   generationToggle.setOnAction(event -> handleGenerationToggle());
+   regionToggle.setOnAction(event -> handleRegionToggle());
+   }
+   
+    private void handleGenerationToggle()
+    {
+      if (generationToggle.isSelected()) 
+      {
+
+          //chosenGenOrReg.getItems().addAll(generations);
+
+          // issue with the parmater type in the addAll java fx method so i leave it commentd out
+          // as to not break the build
+      }
+      else 
+      {
+          // chosenGenOrReg.getItems().setItems(null)
+      }
+    }
+    
+    private void handleRegionToggle()
+    {
+      if (regionToggle.isSelected())
+      {
+          //chosenGenOrReg.getItems().addAll(regions);
+
+          // or .setItems(regions)
+      }
+      else
+      {
+         // chosenGenOrReg.getItems().setItems(null)
+      }
    } 
 }
+
+

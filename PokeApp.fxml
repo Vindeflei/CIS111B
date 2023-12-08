@@ -18,7 +18,7 @@
          <children>
             <HBox fx:id="selectGenOrReg" prefHeight="25.0">
                <children>
-                  <ChoiceBox fx:id="chosenGenOrReg" prefHeight="25.0" prefWidth="360.0" stylesheets="@../CIS111BFinalSelfWork/PokeAppStyle.css" />
+                  <ChoiceBox fx:id="chosenGenOrReg" prefHeight="25.0" prefWidth="360.0" />
                   <ToggleButton fx:id="generationToggle" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" selected="true" text="Generation">
                      <toggleGroup>
                         <ToggleGroup fx:id="select" />
@@ -27,25 +27,25 @@
                   <ToggleButton fx:id="regionToggle" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Region" toggleGroup="$select" />
                </children>
             </HBox>
-            <ChoiceBox fx:id="chosenPokemon" prefHeight="25.0" prefWidth="675.0" stylesheets="@../CIS111BFinalSelfWork/PokeAppStyle.css" />
+            <ChoiceBox fx:id="chosenPokemon" prefHeight="25.0" prefWidth="675.0" />
             <ProgressBar fx:id="loadingBar" prefHeight="20.0" prefWidth="600.0" progress="0.0" />
             <Label fx:id="loadingText" alignment="CENTER" layoutX="10.0" layoutY="335.0" prefHeight="25.0" prefWidth="600.0" text="Loading..." textAlignment="CENTER" />
             <HBox fx:id="spritesView" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <ImageView fx:id="sprite" fitHeight="255.0" fitWidth="300.0" nodeOrientation="INHERIT" pickOnBounds="true">
                      <image>
-                        <Image url="" />
+                        <Image url="testPic.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="spriteShiny" fitHeight="255.0" fitWidth="300.0" pickOnBounds="true">
                      <image>
-                        <Image url="" />
+                        <Image url="testPic.jpg" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
             <Label fx:id="pokeName" alignment="CENTER" prefHeight="25.0" prefWidth="600.0" text="" textAlignment="CENTER" />
-            <ChoiceBox fx:id="chosenPokeVar" prefHeight="25.0" prefWidth="675.0" />
+            <ChoiceBox fx:id="chosenPokeVar" prefHeight="25.0" prefWidth="675.0"/>
          </children>
       </VBox>
    </children>

@@ -18,9 +18,9 @@ public class RegionalDex{
    */
    private String name;
    /**
-   *The list of Pokemon objects for use with the application
+   *The list of pokemon for use with the application
    */
-   private Pokemon[] pokemon;
+   private String[] pokemon;
    /**
    *The constructor.
    *Takes a Region object as a parameter and builds the pokedex for that region.
@@ -35,11 +35,7 @@ public class RegionalDex{
       String rawData;
       Pokedex dex;
       HashSet<String> pokeList = new HashSet<String>();
-      PokemonSpecies tempSpec;
-      PokemonSprites[] tempPics;
       int i = 0;
-      int j;
-      Pokemon tempMon;
       Gson gson = new Gson();
       //Create the list of pokemon IDs
       for(String dexName:r.getDexes()){
@@ -54,25 +50,9 @@ public class RegionalDex{
       //Sort the list in alphabetical order
       ArrayList<String> pokeListSorted = new ArrayList<String>(pokeList);
       Collections.sort(pokeListSorted);
-      pokemon = new Pokemon[pokeList.size()];
-      //Building the dex using for loops and API calls
-      for(String poke:pokeListSorted){
-         url = new URL("https://pokeapi.co/api/v2/pokemon-species/"+poke);
-         scan = new Scanner(url.openStream());
-         rawData = scan.nextLine();
-         tempSpec = gson.fromJson(rawData,PokemonSpecies.class);
-         tempPics = new PokemonSprites[tempSpec.getVarieties().length];
-         j = 0;
-         for(String var:tempSpec.getVarieties()){
-            url = new URL("https://pokeapi.co/api/v2/pokemon/"+var);
-            scan = new Scanner(url.openStream());
-            rawData = scan.nextLine();
-            PokemonSprites temp = gson.fromJson(rawData,PokemonSprites.class);
-            tempPics[j] = temp;
-            j++;
-         }
-         tempMon=new Pokemon(tempSpec,tempPics);
-         pokemon[i]=tempMon;
+      pokemon = new String[pokeListSorted.size()];
+      for(String p:pokeListSorted){
+         pokemon[i]=p;
          i++;
       }
    }
@@ -92,30 +72,6 @@ public class RegionalDex{
    *@return list of pokemon names
    */
    public String[] getPokeList(){
-      String[] temp = new String[pokemon.length];
-      int i=0;
-      for(Pokemon poke:pokemon){
-         temp[i]=poke.getDisplayName();
-         i++;
-      }
-      return temp;
-   }
-   /**
-   *Returns the pokemon for the given index, intended
-   *for use on click, needs an index value
-   *
-   *@return pokemon at index
-   */
-   public Pokemon getPokemon(int index){
-      return pokemon[index];
-   }
-   /**
-   *A test method for printing a given pokemon's display name
-   *
-   *@param the index of the pokemon
-   */
-   public void testPrintMonName(int n){
-      if(n<pokemon.length)System.out.println(pokemon[n].getDisplayName());
-      else System.out.println("There aren't that many entries in the dex.");
+      return pokemon;
    }
 }

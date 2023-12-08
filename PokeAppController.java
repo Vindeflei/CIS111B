@@ -17,16 +17,25 @@ public class PokeAppController {
     private AnchorPane base;
 
     @FXML
-    private ChoiceBox<?> chosenGenOrReg;
+    private VBox vBox;
 
     @FXML
-    private ChoiceBox<?> chosenPokeVar;
+    private HBox selectGenOrReg;
 
     @FXML
-    private ChoiceBox<?> chosenPokemon;
+    private ChoiceBox<String> chosenGenOrReg;
 
     @FXML
     private ToggleButton generationToggle;
+
+    @FXML
+    private ToggleGroup select;
+
+    @FXML
+    private ToggleButton regionToggle;
+
+    @FXML
+    private ChoiceBox<String> chosenPokemon;
 
     @FXML
     private ProgressBar loadingBar;
@@ -35,16 +44,7 @@ public class PokeAppController {
     private Label loadingText;
 
     @FXML
-    private Label pokeName;
-
-    @FXML
-    private ToggleButton regionToggle;
-
-    @FXML
-    private ToggleGroup select;
-
-    @FXML
-    private HBox selectGenOrReg;
+    private HBox spritesView;
 
     @FXML
     private ImageView sprite;
@@ -53,12 +53,27 @@ public class PokeAppController {
     private ImageView spriteShiny;
 
     @FXML
-    private HBox spritesView;
+    private Label pokeName;
 
     @FXML
-    private VBox vBox;
-   
-   
+    private ChoiceBox<String> chosenPokeVar;
+    
+    //In the same order as the API IDs
+    private String[] genList = new String[]{"1st Generation","2nd Generation",
+    "3rd Generation","4th Generation","5th Generation","6th Generation",
+    "7th Generation","8th Generation","9th Generation"};
+    //In the same order as the API IDs
+    private String[] regList = new String[]{"Kanto","Johto","Hoenn","Sinnoh",
+    "Unova","Kalos","Alola","Galar","Hisui","Paldea"};
+
+    private String[] pokemonList;
+
+    private String[] pokeVarieties;
+
+    private String spriteURL;
+
+    private String spriteShinyURL;   
+  
    public ObservableList<String> regions = FXCollections.observableArrayList("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar");
    public ObservableList<String> generations = FXCollections.observableArrayList("Generation I", "Generation II", "Generation III", "Generation IV", "Generation V", "Generation VI","Generation VII", "Generation VIII");
 
@@ -102,7 +117,6 @@ public class PokeAppController {
          // chosenGenOrReg.getItems().setItems(null)
       }
    } 
-
 }
 
 

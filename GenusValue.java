@@ -4,7 +4,7 @@
 *
 *@author Cat Weidner
 */
-public class GenusValue{
+public class GenusValue extends NameLangValue{
    /**
    *The genus field saved from the API call
    */
@@ -14,6 +14,7 @@ public class GenusValue{
    *
    *@return the genus of a pokemon
    */
+   @Override
    public String getName(){
       return genus;
    }

@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94f67a8a-e9a0-438a-9b89-94c8fdd6783b" name="Changes" comment="">
+    <list default="true" id="ab577f4a-e6d5-48bd-807a-e1554d1f2d85" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokeApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/PokeApp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokeAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokeAppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokeAppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokeAppMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,51 +23,54 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2Z09pvRc9mykch1wqfMea1sgaPv" />
+  <component name="ProjectId" id="2ZHRAhR2C164IUUk2oVxRcXKmcq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.PokeAppMain.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/code exam 1",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+    "last_opened_file_path": "C:/Users/16106/Desktop/Cat/CompSciFall2023/finalProject/CIS111B/lib/javafx-sdk-21.0.1/lib",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="Main.java" />
-      <command value="Main" />
-      <command value="public class Main" />
-      <command value="main(String[] args)" />
-    </option>
+  <component name="RunManager">
+    <configuration name="PokeAppMain" type="Application" factoryName="Application" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PokeAppMain" />
+      <module name="CIS111B" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\16106\Desktop\Cat\CompSciFall2023\finalProject\CIS111B\lib\javafx-sdk-21.0.1\lib --add-modules=javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
-  <component name="RunAnythingContextRecentDirectoryCache">
-    <option name="paths">
-      <recentPaths value="$PROJECT_DIR$/../code exam 1" />
-      <recentPaths value="$PROJECT_DIR$/../code exam 1" />
-    </option>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-temurin-21.0.1-8336523bb0d9-b1dfcc3b" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="94f67a8a-e9a0-438a-9b89-94c8fdd6783b" name="Changes" comment="" />
-      <created>1701548318269</created>
+      <changelist id="ab577f4a-e6d5-48bd-807a-e1554d1f2d85" name="Changes" comment="" />
+      <created>1702076877687</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1701548318269</updated>
+      <updated>1702076877687</updated>
     </task>
     <servers />
   </component>

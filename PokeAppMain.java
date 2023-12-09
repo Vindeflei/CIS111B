@@ -1,11 +1,10 @@
-import java.net.URL;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.util.*;
+import java.util.*;
 
 public class PokeAppMain extends Application
 {
@@ -16,7 +15,7 @@ public class PokeAppMain extends Application
    public void start(Stage stage) throws Exception
    {
       // Load the GUI from FXML built in Scene Builder
-      Parent root = FXMLLoader.load(getClass().getResource("PokeApp.fxml"));
+      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PokeApp.fxml")));
       Scene scene = new Scene(root);      
       stage.setTitle("PokePics App");
       

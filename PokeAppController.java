@@ -15,6 +15,7 @@ import javafx.collections.FXCollections;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.prefs.Preferences;
 
 public class PokeAppController{
 
@@ -74,17 +75,20 @@ public class PokeAppController{
     private String spriteURL = "testPic.jpg";
 
     private String spriteShinyURL = "testPic.jpg";
+    public static final String genOrReg = "toggle_key";
+
+
 
 
 
    public ObservableList<String> regions = FXCollections.observableArrayList(
            "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova",
-           "Kalos", "Alola", "Galar", "Hisui","Paldea");
+           "Kalos", "Alola", "Galar");
    public ObservableList<String> generations = FXCollections.observableArrayList(
            "Generation I", "Generation II", "Generation III", "Generation IV",
            "Generation V", "Generation VI","Generation VII",
-           "Generation VIII", "Generation IX");
-    private static boolean genView=true;
+           "Generation VIII");
+    private String view = "genView";
 
     private URL url;
 
@@ -123,20 +127,31 @@ public class PokeAppController{
    //buttons
    generationToggle.setOnAction(event -> handleToggle());
    regionToggle.setOnAction(event -> handleToggle());
+   handleToggle();
+   Preferences pref = Preferences.userNodeForPackage(PokeAppController.class);
+   this.view = pref.get(genOrReg, "genView");
+   if (view.equals("genView")){
+       generationToggle.setSelected(true);
+   }
+   else {
+       regionToggle.setSelected(true);
+   }
    }
    
     private void handleToggle()
     {
       if (generationToggle.isSelected()) 
       {
-          genView = true;
+          view = "genView";
           chosenGenOrReg.setItems(generations);
       }
       else if (regionToggle.isSelected())
       {
-          genView = false;
+          view = "regView";
           chosenGenOrReg.setItems(regions);
       }
+      Preferences pref = Preferences.userNodeForPackage(PokeAppController.class);
+      pref.put(genOrReg, view);
     }
     
     /*private void handleRegionToggle()
@@ -150,7 +165,7 @@ public class PokeAppController{
     private void handleGenRegSelect() throws IOException {
         chosenPokemon.setVisible(true);
         ObservableList<String> pokemonList;
-        if(genView){
+        if(view.equals("genView")){
             url = new URL("https://pokeapi.co/api/v2/generation/"+(generations.indexOf(chosenGenOrReg.getValue())+1));
             scan = new Scanner(url.openStream());
             rawData = scan.nextLine();

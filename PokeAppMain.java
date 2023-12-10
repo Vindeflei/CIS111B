@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,14 +19,14 @@ public class PokeAppMain extends Application
       Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PokeApp.fxml")));
       Scene scene = new Scene(root);      
       stage.setTitle("PokePics App");
-      
+      stage.getIcons().add(new Image("pokeballicon.png"));
       // The stylesheet is currently set in Scene Builder
       // Note you can also load this programmatically
       // scene.getStylesheets().add("styles.css");
 
       stage.setScene(scene);
       stage.show();
-      
+
    }
    @Override
    public void stop() {

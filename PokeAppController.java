@@ -63,14 +63,6 @@ public class PokeAppController{
 
     @FXML
     private ChoiceBox<String> chosenPokeVar;
-    
-    /*//In the same order as the API IDs
-    private final String[] genList = new String[]{"Generation I","Generation II",
-    "Generation III","Generation IV","Generation V","Generation VI",
-    "Generation VII","Generation VIII","Generation IX"};
-    //In the same order as the API IDs
-    private final String[] regList = new String[]{"Kanto","Johto","Hoenn","Sinnoh",
-    "Unova","Kalos","Alola","Galar","Hisui","Paldea"};*/
 
     private String spriteURL = "testPic.jpg";
 
@@ -152,16 +144,16 @@ public class PokeAppController{
       }
       Preferences pref = Preferences.userNodeForPackage(PokeAppController.class);
       pref.put(genOrReg, view);
+      chosenGenOrReg.setValue(chosenGenOrReg.getItems().get(0));
+      chosenPokemon.setValue(chosenPokemon.getItems().get(0));
+      chosenPokeVar.setValue(chosenPokeVar.getItems().get(0));
+      chosenPokemon.setVisible(false);
+      chosenPokeVar.setVisible(false);
+      spritesView.setVisible(false);
+      pokeName.setVisible(false);
     }
     
-    /*private void handleRegionToggle()
-    {
 
-      else
-      {
-         // chosenGenOrReg.getItems().setItems(null)
-      }
-   } */
     private void handleGenRegSelect() throws IOException {
         chosenPokemon.setVisible(true);
         ObservableList<String> pokemonList;

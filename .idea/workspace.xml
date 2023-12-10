@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab577f4a-e6d5-48bd-807a-e1554d1f2d85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_21_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CIS111B.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CIS111B/CIS111B.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PokeAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokeAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intellijOutput/production/CIS111B/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/intellijOutput/production/CIS111B/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intellijOutput/production/CIS111B/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/intellijOutput/production/CIS111B/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PokeAppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/PokeAppMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +76,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/PokeAppController.java</url>
-          <line>153</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

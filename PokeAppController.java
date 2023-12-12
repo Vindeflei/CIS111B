@@ -67,20 +67,19 @@ public class PokeAppController{
     private String spriteURL = "testPic.jpg";
 
     private String spriteShinyURL = "testPic.jpg";
+    
     public static final String genOrReg = "toggle_key";
-
-
-
-
 
    public ObservableList<String> regions = FXCollections.observableArrayList(
            "Kanto", "Johto", "Hoenn", "Sinnoh", "Unova",
            "Kalos", "Alola", "Galar");
+           
    public ObservableList<String> generations = FXCollections.observableArrayList(
            "Generation I", "Generation II", "Generation III", "Generation IV",
            "Generation V", "Generation VI","Generation VII",
            "Generation VIII");
-    private String view = "genView";
+           
+    private String view;
 
     private URL url;
 
@@ -92,7 +91,6 @@ public class PokeAppController{
 
    public void initialize()
    {
-
    //choice boxes
    chosenGenOrReg.setOnAction(event -> {
        try {
@@ -105,21 +103,21 @@ public class PokeAppController{
        try {
            handlePokeSelect();
        } catch (IOException e) {
-           throw new RuntimeException(e);
+          throw new RuntimeException(e);
        }
    });
    chosenPokeVar.setOnAction(event-> {
        try {
            handleVarSelect();
        } catch (IOException e) {
-           throw new RuntimeException(e);
+          throw new RuntimeException(e);
        }
    });
    
    //buttons
    generationToggle.setOnAction(event -> handleToggle());
    regionToggle.setOnAction(event -> handleToggle());
-   handleToggle();
+   //check preferences
    Preferences pref = Preferences.userNodeForPackage(PokeAppController.class);
    this.view = pref.get(genOrReg, "genView");
    if (view.equals("genView")){
@@ -128,6 +126,8 @@ public class PokeAppController{
    else {
        regionToggle.setSelected(true);
    }
+   //populate dropdowns
+   handleToggle();
    }
    
     private void handleToggle()
@@ -155,6 +155,9 @@ public class PokeAppController{
     
 
     private void handleGenRegSelect() throws IOException {
+        if(chosenGenOrReg.getValue()==null){
+         return;
+        }
         chosenPokemon.setVisible(true);
         ObservableList<String> pokemonList;
         if(view.equals("genView")){
@@ -175,6 +178,9 @@ public class PokeAppController{
         chosenPokemon.setItems(pokemonList);
     }
     private void handlePokeSelect() throws IOException{
+        if(chosenPokemon.getValue()==null){
+         return;
+        }
         ObservableList<String> pokeVarieties;
         url = new URL("https://pokeapi.co/api/v2/pokemon-species/"+chosenPokemon.getValue());
         scan = new Scanner(url.openStream());
@@ -197,6 +203,9 @@ public class PokeAppController{
         spriteShiny.setImage(new Image(spriteShinyURL));
     }
     private void handleVarSelect() throws IOException{
+        if(chosenPokeVar.getValue()==null){
+         return;
+        }
         url = new URL("https://pokeapi.co/api/v2/pokemon/"+chosenPokeVar.getValue());
         scan = new Scanner(url.openStream());
         rawData = scan.nextLine();
